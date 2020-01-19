@@ -7,9 +7,13 @@ game of asteroids (trained using NEAT).
 2x2_diag_detect.py
 
 To use:
+
 1: Run NN.py
+
 2: Run 2x2_diag_detect.py
+
 3: Input numbers a,b,c,d from {0,1} (repeated 3 times)
+
 4: Output either: 1.0 = yes for checkerboard, 0.0 = no
 
 Script to create a NN for recognising a checkerboard pattern in a 2x2 grid, as 
@@ -28,28 +32,36 @@ NN.py
 
 This script contains the NN class. So far it has:
 
--> __init__
+-> init
+
 Initialise by creating a NN, with the structure given at input and the 
 weights all initialised to input values/zero. 
 
 Input either:
 
 - A list containing the matrices of weights between nodes, including 
-the bias nodes. So the full NN. 
+the bias nodes. So the full NN. Prioritised over npl. E.g. nn = list_of_weights
 - A list containing the number of nodes per layer, with the first 
 entry representing layer 1, the second entry representing layer 2, etc.
 This does not include the bias nodes, which are added automatically. 
+E.g. npl = list_of_nodes_per_layer
 
-Also, input the activation function. 
+Also, input the activation function. E.g. af = 'step' or af = 'sigmoid'
 
--> __str__
-Print Method
+Example:
+
+nnet = NeuralNetwork(nn = list_of_weights, af = 'step')
+
+-> str
+
+print(nnet) method
 
 -> predict
+
 Predict method, which applies the NN to the input signals to get the 
 predictions for the output
 
-Input: The NN object, signals (input list of signals)
+Input: The NN object, signals (input list of signals). E.g. nnet.predict(signals_in)
 
 Output: signals (output list of signals)
 
